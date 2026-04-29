@@ -7,4 +7,3 @@ public sealed class MyComponent : Component
 	{
 	}
 }
-//hello world
