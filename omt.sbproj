@@ -1,5 +1,5 @@
 {
-  "Title": "omt",
+  "Title": "HellPiecer",
   "Type": "game",
   "Org": "local",
   "Ident": "omt",
@@ -23,6 +23,7 @@
     "PerMapRanking": false,
     "LeaderboardType": "None",
     "CsProjName": "",
-    "StartupScene": "scenes/minimal.scene"
+    "StartupScene": "scenes/minimal.scene",
+    "LaunchMode": "Normal"
   }
 }
