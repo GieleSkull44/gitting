@@ -128,9 +128,11 @@ public sealed class CustomPlayerController : Component
 
 localMoveInputVector3 = new Vector3(forwBackwMove, leftRightMove, 0);
 
-localMoveVector = new Vector3((localMoveInputVector3.x * defaultMoveSpeed) + GameObject.Parent.GetComponent<Rigidbody>().Velocity.x, GameObject.Parent.GetComponent<Rigidbody>().Velocity.y + (localMoveInputVector3.y * defaultMoveSpeed), GameObject.Parent.GetComponent<Rigidbody>().Velocity.z) * moveSpeedMultiplier;
+//localMoveVector = new Vector3((localMoveInputVector3.x * defaultMoveSpeed) + GameObject.Parent.GetComponent<Rigidbody>().Velocity.x, GameObject.Parent.GetComponent<Rigidbody>().Velocity.y + (localMoveInputVector3.y * defaultMoveSpeed), GameObject.Parent.GetComponent<Rigidbody>().Velocity.z) * moveSpeedMultiplier;
+localMoveVector = new Vector3((localMoveInputVector3.x * defaultMoveSpeed * GameObject.Parent.WorldRotation.z) + GameObject.Parent.GetComponent<Rigidbody>().Velocity.x,(localMoveInputVector3.x * defaultMoveSpeed * GameObject.Parent.WorldRotation.z) + GameObject.Parent.GetComponent<Rigidbody>().Velocity.y, GameObject.Parent.GetComponent<Rigidbody>().Velocity.z) * moveSpeedMultiplier;
+
 GameObject.Parent.GetComponent<Rigidbody>().Velocity = localMoveVector;
-Log.Info(GameObject.Parent.WorldRotation);
+Log.Info(GameObject.Parent.WorldTransform);
 
 
 	
